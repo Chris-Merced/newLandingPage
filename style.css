@@ -1,0 +1,274 @@
+body {
+    --backgroundcolor: hsla(0, 0%, 27%, 0.432);
+    
+    font-family: roboto;
+    font-size: xx-large;
+    height: 100vh;
+    overflow: auto;
+    resize: both;
+    margin:0;
+    display: grid;
+    grid-template-columns: 2fr 8fr;
+    grid-template-rows: 1fr 6fr;
+    grid-template-areas: "sidebar header"
+                "sidebar article"
+}
+
+
+@font-face {
+    font-family: roboto;
+    src: url('font/Roboto-Regular.ttf');
+}
+
+header {
+    grid-area: header;
+    display: flex;
+    flex-direction: column;
+}
+
+header div {
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+    padding-right: 50px;
+
+}
+
+form {
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+}
+
+form button {
+    background-color: white;
+    border: none;
+    margin-left: 2vw;
+}
+
+input:focus {
+    outline: none;
+}
+
+input {
+    width: 500px;
+    height: 30px;
+    background-color: rgba(175, 175, 175, 0.836);
+    border-radius: 1em;
+    border-style: none;
+}
+
+button img {
+    height: 40px;
+    width: 40px;
+}
+
+.textbundle {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-right: auto;
+}
+
+.headersecondrow {
+    box-shadow: 0px 10px 10px -4px hsla(0, 0%, 0%, 0.445);
+    height: 10vh;
+}
+
+.headersecondrow button {
+    border: none;
+    background-color: black;
+    color: white;
+    border-radius: 2em;
+    height: 60px;
+    width: 150px;
+    margin-left:15px;
+    box-shadow: 2px 3px 4px hsla(0, 0%, 27%, 0.849);
+}
+
+.sidebar {
+    grid-area: sidebar;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    background-color: hsla(0, 0%, 17%, 0.623);
+    color: white;
+    padding-left: 4vw;
+}
+
+.sidebar h2 {
+    margin-left: -30px;
+    text-shadow: 0px 0px 2px whitesmoke;
+}
+
+.sidebarcategory {
+   display: flex;
+   align-items: center;
+   gap:10px;   
+    padding-right: 10px;
+}
+
+.sidebarcategory a {
+    text-decoration: none;
+    color: white;
+    text-shadow: 0px 0px 2px whitesmoke;
+}
+ 
+.sidebar div div img {
+    width: 20px;
+    height: 20px;
+}
+
+
+
+article {
+    grid-area: article;
+    overflow: auto;
+    resize: both;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "projects announcements"
+                        "projects trending";
+    background-color: var(--backgroundcolor);
+}
+
+.projects {
+    grid-area: projects;
+    display: flex;
+    flex-direction: column;
+    color: hsla(0, 0%, 45%, 0.658)
+}
+
+.projects .header {
+    height: 4%;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-left: 5vw;
+    text-shadow: 0px 0px 1px black;
+    color: hsla(0, 0%, 45%, 0.658)
+}
+
+.projects .container {
+    height:90%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 400px));
+    grid-template-rows: repeat(auto-fit, minmax(40px, 1fr));
+    gap: 20px;
+    justify-content: center;
+}
+
+.container .card {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    border-radius: .25em;
+    background-color: white;
+    font-size: .6em;
+    box-shadow: 2px 3px 8px black;
+    padding: 10px;
+    border-left: 5px solid hsla(234, 90%, 42%, 0.829);
+    
+}   
+
+h4 {
+    text-shadow: 0px 0px 1px black;
+    margin: 0;
+    color: hsla(0, 0%, 45%, 0.658)
+}
+
+.announcements {
+    grid-area: announcements;
+    margin-top: 1vh;
+    margin-right: 20px;
+}
+
+.announcements .card {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    width: 22vw;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    box-shadow: 2px 3px 8px black;
+    color: hsla(0, 0%, 45%, 0.658)
+}
+
+.card .announcementnews:not(:last-child) {
+    border-bottom: 2px solid  hsla(0, 0%, 0%, 0.322);
+}
+
+.card .announcementnews {
+    font-size: .430em;
+}
+
+.card img {
+    width: 35px;
+    height: 35px;
+}
+
+.announcementnews .newstitle {
+    font-weight: bolder;
+    font-size: 1.5em;
+    padding-top: 10px;
+    color: hsla(0, 1%, 16%, 0.747)
+
+}
+
+.trending .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 250px;
+    width: 22vw;
+    gap: 40px;
+    box-shadow: 2px 3px 8px black;
+}
+
+.announcements .header {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    color: hsla(0, 0%, 45%, 0.658)
+}
+
+.card .people {
+    display: flex;
+    gap:20px;
+    align-items: center;
+    padding-left: 40px;
+    color: hsla(0, 1%, 16%, 0.747)
+}
+
+.announcements .newstext {
+    line-height: 40px;
+}
+
+.trending {
+    grid-area: trending;
+    margin-right: 40px;
+}
+
+span {
+    font-weight: bolder;
+}
+
+.trending .header {
+    text-shadow: 0px 0px 1px black;
+    color: hsla(0, 0%, 45%, 0.658);
+    margin-bottom: 15px;
+}
+
+.announcements .header {
+    text-shadow: 0px 0px 1px black;
+}
+
+.announcements .card {
+    background-color: white;
+    border-radius: .2em;
+}
+
+.trending .card {
+    background-color: white;
+    border-radius: .2em;
+    margin-right: 10px;
+}
